@@ -56,14 +56,6 @@ canvas#stars {
 }
 
 .forest-page .hamburger {
-  position: relative;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.forest-page .hamburger {
   position: absolute;
   right: 20px;
   top: 50%;
@@ -185,15 +177,10 @@ canvas#stars {
   100% { transform: scale(1); box-shadow: 0 10px 25px rgba(142, 68, 173, 0.3); }
 }
 
-/* ✨ תיקון רווחים בין סקשנים - זה החלק החדש! ✨ */
-.forest-page .hero-section + section,
-.forest-page .hero-section + .section {
-  margin-top: -3rem;
-}
-
+/* Sections */
 .forest-page section {
   background: #fff;
-  margin: 1rem auto;
+  margin: 2rem auto;
   max-width: 900px;
   padding: 2.5rem;
   border-radius: 20px;
@@ -203,7 +190,8 @@ canvas#stars {
   z-index: 1;
 }
 
-.forest-page section + section {
+/* ✨ תיקון הרווח בין כפתור "התחילו עכשיו" לסקשן הראשון ✨ */
+.forest-page .hero-section + section {
   margin-top: -1rem;
 }
 
@@ -442,7 +430,7 @@ details[open] .faq-question .arrow {
 /* Footer */
 .forest-page footer {
   background: rgba(142, 68, 173, 0.9);
-  margin-top: 2rem;
+  margin-top: 3rem;
   color: white;
   padding: 2rem;
   text-align: center;
@@ -461,18 +449,7 @@ details[open] .faq-question .arrow {
 
 /* Responsive */
 @media (max-width: 768px) {
-  /* תיקון רווחים במובייל */
-  .forest-page .hero-section + section,
-  .forest-page .hero-section + .section {
-    margin-top: -2rem;
-  }
-  
-  .forest-page section {
-    margin: 0.5rem auto;
-    padding: 2rem 1.5rem;
-  }
-  
-  .forest-page section + section {
+  .forest-page .hero-section + section {
     margin-top: -0.5rem;
   }
 }
@@ -499,7 +476,6 @@ details[open] .faq-question .arrow {
   
   .forest-page section {
     padding: 2rem 1rem;
-    margin: 0.5rem auto;
   }
   
   .forest-page .feature-grid {
@@ -519,9 +495,7 @@ details[open] .faq-question .arrow {
     margin: 1.5rem auto;
   }
   
-  /* תיקון רווחים במובייל קטן */
-  .forest-page .hero-section + section,
-  .forest-page .hero-section + .section {
-    margin-top: -1rem;
+  .forest-page .hero-section + section {
+    margin-top: -0.5rem;
   }
 }
