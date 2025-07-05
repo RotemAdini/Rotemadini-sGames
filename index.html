@@ -17,9 +17,10 @@
 /* Bridge Section Styles */
 .bridge-section {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
+  margin-top: -2rem;
 }
 
 .bridge-section::before {
@@ -171,9 +172,10 @@
 /* Newsletter Section */
 .newsletter-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   color: white;
+  margin-top: -1rem;
 }
 
 .newsletter-section h2 {
@@ -291,10 +293,112 @@
   cursor: pointer !important;
 }
 
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: #333;
+}
+
+.popup-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.popup-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-family: 'Rubik', sans-serif;
+}
+
+.popup-text {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.popup-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.popup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .bridge-section {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+    margin-top: -1rem;
   }
   
   .section-header h2 {
@@ -315,7 +419,8 @@
   }
   
   .newsletter-section {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+    margin-top: -1rem;
   }
   
   .newsletter-section h2 {
@@ -324,6 +429,24 @@
   
   .newsletter-section .fc_input_text {
     font-size: 16px !important; /* מונע zoom באייפון */
+  }
+
+  .popup-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .popup-title {
+    font-size: 1.5rem;
+  }
+  
+  .popup-icon {
+    font-size: 3rem;
+  }
+
+  #games.games-section {
+    padding: 2rem 1rem;
+    margin-top: -1rem;
   }
 }
 
@@ -345,6 +468,7 @@
     font-size: 1.5rem;
   }
 }
+
 .cta-button {
   display: inline-block;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -366,6 +490,7 @@
 .cta-button i {
   margin-left: 0.5rem;
 }
+
 .cta-button {
   display: inline-block !important;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
@@ -515,12 +640,35 @@
           <div class="game-card-content">
             <h3>🧠 משחק הזיכרון הגדול</h3>
             <p>משחק חדש בדרך אליכם! רוצים להיות הראשונים לדעת כשהוא יעלה? הרשמו לעדכונים!</p>
-            <a href="#newsletter" class="btn-primary" style="background: #95a5a6;">בקרוב...</a>
+            <button onclick="openMemoryGamePopup()" class="btn-primary" style="background: #95a5a6; cursor: pointer; border: none;">בקרוב...</button>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Popup for Memory Game -->
+  <div id="memoryGamePopup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closeMemoryGamePopup()">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="popup-icon">🧠✨</div>
+      
+      <h2 class="popup-title">משחק זוגי חדש בדרך!</h2>
+      
+      <p class="popup-text">
+        תישארו מעודכנים!<br>
+        מוזמנים להירשם לרשימת התפוצה שלנו<br>
+        כדי לא לפספס כשהמשחק יוצא
+      </p>
+      
+      <a href="#newsletter" class="popup-button" onclick="closeMemoryGamePopup()">
+        <i class="fas fa-envelope"></i> הירשמו לעדכונים
+      </a>
+    </div>
+  </div>
 
   <!-- Newsletter Section -->
   <section id="newsletter" class="newsletter-section">
@@ -577,50 +725,50 @@
   </section>
 
   <!-- Footer -->
-<!-- Footer -->
-<footer id="contact" class="footer" style="background: linear-gradient(135deg, #8e44ad, #9b59b6); color: white; text-align: center; padding: 2rem 1rem; margin-top: 3rem;">
-  <div class="footer-links" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-    <a href="contact.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border: 2px solid white; border-radius: 25px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
-      <i class="fas fa-envelope"></i> צור קשר
-    </a>
-    <a href="privacy-policy.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border: 2px solid white; border-radius: 25px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
-      <i class="fas fa-shield-alt"></i> מדיניות פרטיות
-    </a>
-    <a href="terms.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border: 2px solid white; border-radius: 25px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
-      <i class="fas fa-file-contract"></i> תקנון שימוש
-    </a>
-  </div>
-  
-  <div class="social" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-    <a href="https://www.instagram.com/rotem_adini?igsh=MTFrd3VlOXdqdDVubQ%3D%3D&utm_source=qr" target="_blank" class="instagram" aria-label="אינסטגרם" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/share/16WJDMpdpV/?mibextid=wwXIfr" target="_blank" class="facebook" aria-label="פייסבוק" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.tiktok.com/@rotem_adini?_t=ZS-8xCVScFHbYF&_r=1" target="_blank" class="tiktok" aria-label="טיקטוק" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
-      <i class="fab fa-tiktok"></i>
-    </a>
-    <a href="https://www.youtube.com/@rotemadini" target="_blank" class="youtube" aria-label="יוטיוב" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
-      <i class="fab fa-youtube"></i>
-    </a>
-  </div>
-  
-  <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">&copy; 2025 רותם עדיני - משחקי זוגיות. כל הזכויות שמורות.</p>
-</footer>
+  <footer id="contact" class="footer" style="background: linear-gradient(135deg, #8e44ad, #9b59b6); color: white; text-align: center; padding: 2rem 1rem; margin-top: 3rem;">
+    <div class="footer-links" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+      <a href="contact.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border: 2px solid white; border-radius: 25px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-envelope"></i> צור קשר
+      </a>
+      <a href="privacy-policy.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border: 2px solid white; border-radius: 25px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-shield-alt"></i> מדיניות פרטיות
+      </a>
+      <a href="terms.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border: 2px solid white; border-radius: 25px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-file-contract"></i> תקנון שימוש
+      </a>
+    </div>
+    
+    <div class="social" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+      <a href="https://www.instagram.com/rotem_adini?igsh=MTFrd3VlOXdqdDVubQ%3D%3D&utm_source=qr" target="_blank" class="instagram" aria-label="אינסטגרם" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/16WJDMpdpV/?mibextid=wwXIfr" target="_blank" class="facebook" aria-label="פייסבוק" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.tiktok.com/@rotem_adini?_t=ZS-8xCVScFHbYF&_r=1" target="_blank" class="tiktok" aria-label="טיקטוק" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.youtube.com/@rotemadini" target="_blank" class="youtube" aria-label="יוטיוב" style="color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    
+    <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">&copy; 2025 רותם עדיני - משחקי זוגיות. כל הזכויות שמורות.</p>
+  </footer>
 
-<style>
-.footer a:hover {
-  background: white !important;
-  color: #8e44ad !important;
-  transform: translateY(-2px);
-}
-.social a:hover {
-  background: white !important;
-  color: #8e44ad !important;
-  transform: scale(1.1);
-}
-</style>
+  <style>
+  .footer a:hover {
+    background: white !important;
+    color: #8e44ad !important;
+    transform: translateY(-2px);
+  }
+  .social a:hover {
+    background: white !important;
+    color: #8e44ad !important;
+    transform: scale(1.1);
+  }
+  </style>
+
   <!-- JavaScript -->
   <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -639,6 +787,33 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Make toggleSidebar global for onclick
   window.toggleSidebar = toggleSidebar;
+
+  // Memory Game Popup functions
+  window.openMemoryGamePopup = function() {
+    const popup = document.getElementById('memoryGamePopup');
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  };
+
+  window.closeMemoryGamePopup = function() {
+    const popup = document.getElementById('memoryGamePopup');
+    popup.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  };
+
+  // Close popup when clicking outside
+  document.getElementById('memoryGamePopup').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeMemoryGamePopup();
+    }
+  });
+
+  // Close popup with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMemoryGamePopup();
+    }
+  });
 
   // Smooth scrolling for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
