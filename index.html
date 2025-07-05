@@ -543,18 +543,306 @@
   <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>💕 משחקי זוגיות מיוחדים</h1>
-      <p class="subtitle">
-        ערבים זוגיים בלתי נשכחים מהנוחות של הבית<br>
-        צחוק, חיבור ורגעים מתוקים בקליק אחד
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="main-title">💕 משחקי זוגיות מיוחדים</h1>
+    
+    <div class="personal-intro">
+      <h2 class="intro-greeting">היי, אני רותם! 👋</h2>
+      <p class="mission-statement">
+        יש לי משימה: להפוך כל ערב רגיל שלכם לערב <span class="special-word">בלתי נשכח</span>
       </p>
-<a href="#games" class="cta-button">
-  <i class="fas fa-gamepad"></i> גלו את המשחקים
-</a>
     </div>
-  </section>
+    
+    <div class="main-promise">
+      <p class="promise-text">
+        המשחקים שלי מחזירים את הפלירט, הצחוקים והחיבור שהכרתם בהתחלה ✨
+      </p>
+    </div>
+    
+    <div class="compelling-question">
+      <h3 class="question-text">למה לצאת החוצה כשאפשר ליצור קסם בסלון שלכם?</h3>
+    </div>
+    
+    <div class="simple-benefits">
+      <p class="benefit-line">🏠 בלי תכנון מסובך • 💜 רק אתם + משחק = ערב מושלם</p>
+    </div>
+    
+    <div class="action-area">
+      <a href="#games" class="main-cta">
+        <span class="cta-icon">🎮</span>
+        <span class="cta-text">בואו נתחיל!</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, #8fa4d3 0%, #9bb5e8 50%, #b8c9f0 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.main-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.personal-intro {
+  margin: 4rem 0;
+}
+
+.intro-greeting {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #e67e22;
+  margin-bottom: 2rem;
+  text-shadow: 0 3px 10px rgba(255,255,255,0.6);
+  line-height: 1.1;
+  background: linear-gradient(45deg, #e67e22, #f39c12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mission-statement {
+  font-size: 2.6rem;
+  color: #2c3e50;
+  font-weight: 700;
+  line-height: 1.4;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.special-word {
+  color: #e74c3c;
+  font-weight: 900;
+  font-size: 1.15em;
+  text-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.main-promise {
+  margin: 4rem 0;
+}
+
+.promise-text {
+  font-size: 2.4rem;
+  color: #34495e;
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+  max-width: 750px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.25);
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.compelling-question {
+  margin: 4rem 0;
+  padding: 3rem;
+  background: rgba(255,255,255,0.3);
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  border: 3px solid rgba(255,255,255,0.5);
+}
+
+.question-text {
+  font-size: 2.8rem;
+  color: #8e44ad;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 3px 10px rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+.simple-benefits {
+  margin: 4rem 0;
+}
+
+.benefit-line {
+  font-size: 2.2rem;
+  color: #27ae60;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+  line-height: 1.4;
+  background: rgba(255,255,255,0.2);
+  padding: 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.action-area {
+  margin-top: 5rem;
+}
+
+.main-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 2rem 4rem;
+  border-radius: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
+  transition: all 0.3s ease;
+  border: 3px solid rgba(255,255,255,0.2);
+}
+
+.main-cta:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(231, 76, 60, 0.7);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.cta-icon {
+  font-size: 2.5rem;
+  animation: bounce-icon 2s infinite ease-in-out;
+}
+
+@keyframes bounce-icon {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(10deg); }
+}
+
+.cta-text {
+  font-family: 'Rubik', sans-serif;
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .main-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .intro-greeting {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-statement {
+    font-size: 1.8rem;
+    padding: 1.5rem;
+  }
+
+  .promise-text {
+    font-size: 1.6rem;
+    padding: 2rem;
+  }
+
+  .question-text {
+    font-size: 2rem;
+  }
+
+  .compelling-question {
+    padding: 2rem;
+  }
+
+  .benefit-line {
+    font-size: 1.6rem;
+    padding: 1.2rem;
+  }
+
+  .main-cta {
+    font-size: 1.5rem;
+    padding: 1.5rem 3rem;
+    letter-spacing: 1px;
+  }
+
+  .cta-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-greeting {
+    font-size: 2.2rem;
+  }
+
+  .mission-statement {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .promise-text {
+    font-size: 1.3rem;
+    padding: 1.5rem;
+  }
+
+  .question-text {
+    font-size: 1.6rem;
+  }
+
+  .benefit-line {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+
+  .main-cta {
+    font-size: 1.3rem;
+    padding: 1.3rem 2.5rem;
+  }
+}
+</style>
 
   <!-- Bridge Section -->
   <section class="bridge-section">
