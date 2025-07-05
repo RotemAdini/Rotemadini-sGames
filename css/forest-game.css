@@ -185,10 +185,15 @@ canvas#stars {
   100% { transform: scale(1); box-shadow: 0 10px 25px rgba(142, 68, 173, 0.3); }
 }
 
-/* Sections */
+/* ✨ תיקון רווחים בין סקשנים - זה החלק החדש! ✨ */
+.forest-page .hero-section + section,
+.forest-page .hero-section + .section {
+  margin-top: -3rem;
+}
+
 .forest-page section {
   background: #fff;
-  margin: 2rem auto;
+  margin: 1rem auto;
   max-width: 900px;
   padding: 2.5rem;
   border-radius: 20px;
@@ -196,6 +201,10 @@ canvas#stars {
   text-align: center;
   position: relative;
   z-index: 1;
+}
+
+.forest-page section + section {
+  margin-top: -1rem;
 }
 
 .forest-page h2 {
@@ -351,6 +360,18 @@ canvas#stars {
 }
 
 /* About Game Section */
+.about-game-section {
+  background: #fdfafb;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.about-game-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
 .about-game-section p {
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
@@ -421,7 +442,7 @@ details[open] .faq-question .arrow {
 /* Footer */
 .forest-page footer {
   background: rgba(142, 68, 173, 0.9);
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: white;
   padding: 2rem;
   text-align: center;
@@ -439,6 +460,23 @@ details[open] .faq-question .arrow {
 }
 
 /* Responsive */
+@media (max-width: 768px) {
+  /* תיקון רווחים במובייל */
+  .forest-page .hero-section + section,
+  .forest-page .hero-section + .section {
+    margin-top: -2rem;
+  }
+  
+  .forest-page section {
+    margin: 0.5rem auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  .forest-page section + section {
+    margin-top: -0.5rem;
+  }
+}
+
 @media (max-width: 500px) {
   .hero-title {
     font-size: 2rem;
@@ -461,6 +499,7 @@ details[open] .faq-question .arrow {
   
   .forest-page section {
     padding: 2rem 1rem;
+    margin: 0.5rem auto;
   }
   
   .forest-page .feature-grid {
@@ -479,16 +518,10 @@ details[open] .faq-question .arrow {
   .purchase-button-container {
     margin: 1.5rem auto;
   }
-}-game-section {
-  background: #fdfafb;
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  
+  /* תיקון רווחים במובייל קטן */
+  .forest-page .hero-section + section,
+  .forest-page .hero-section + .section {
+    margin-top: -1rem;
+  }
 }
-
-.about-game-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.about
