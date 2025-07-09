@@ -143,6 +143,7 @@ canvas#stars {
 }
 
 /* Button Styles */
+
 .forest-page .btn-primary {
   display: inline-block;
   background: linear-gradient(135deg, #8e44ad, #9b59b6);
