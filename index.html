@@ -542,307 +542,259 @@
   <!-- Overlay -->
   <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- Hero Section -->
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="main-title">💕 משחקי זוגיות מיוחדים</h1>
-    
-    <div class="personal-intro">
-      <h2 class="intro-greeting">היי, אני רותם! 👋</h2>
-      <p class="mission-statement">
-        יש לי משימה: להפוך כל ערב רגיל שלכם לערב <span class="special-word">בלתי נשכח</span>
+
+<section class="hero-classic-purple">
+  <div class="hero-content-classic-purple">
+    <h1 class="main-title-classic-purple">
+      <span class="heart-icon-classic">💖</span> משחקי זוגיות מיוחדים
+    </h1>
+
+    <div class="personal-intro-classic-purple">
+      <h3 class="intro-greeting-classic-purple">היי, אני רותם! 👋</h3>
+      <p class="mission-statement-classic-purple">
+        יש לי משימה: להפוך כל ערב רגיל שלכם לערב
+        <span class="special-word-classic-purple">בלתי נשכח</span>.
       </p>
     </div>
-    
-    <div class="main-promise">
-      <p class="promise-text">
-        המשחקים שלי מחזירים את הפלירט, הצחוקים והחיבור שהכרתם בהתחלה ✨
+
+    <div class="main-promise-classic-purple">
+      <p class="promise-text-classic-purple">
+        המשחקים שלי מחזירים את הפלירט, הצחוקים והחיבור שהכרתם בהתחלה ✨.
       </p>
     </div>
-    
-    <div class="compelling-question">
-      <h3 class="question-text">למה לצאת החוצה כשאפשר ליצור קסם בסלון שלכם?</h3>
+
+    <div class="compelling-question-classic-purple">
+      <h3 class="question-text-classic-purple">
+        למה לצאת החוצה כשאפשר ליצור קסם בסלון שלכם?
+      </h3>
     </div>
-    
-    <div class="simple-benefits">
-      <p class="benefit-line">🏠 בלי תכנון מסובך • 💜 רק אתם + משחק = ערב מושלם</p>
+
+    <div class="simple-benefits-classic-purple">
+      <p class="benefit-line-classic-purple">
+        🏠 בלי תכנון מסובך • 💜 רק אתם + משחק = ערב מושלם
+      </p>
     </div>
-    
-    <div class="action-area">
-      <a href="#games" class="main-cta">
-        <span class="cta-icon">🎮</span>
-        <span class="cta-text">בואו נתחיל!</span>
+
+    <div class="action-area-classic-purple">
+      <a href="#games" class="main-cta-classic-purple">
+        <span class="cta-icon-classic-purple">🎲</span>
+        <span class="cta-text-classic-purple">בואו נתחיל!</span>
       </a>
     </div>
   </div>
 </section>
 
 <style>
-.hero {
-  background: linear-gradient(135deg, #8fa4d3 0%, #9bb5e8 50%, #b8c9f0 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 4rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
+  @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Alef&display=swap");
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.15) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.hero-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.main-title {
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #2c3e50;
-  margin-bottom: 3rem;
-  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-
-.personal-intro {
-  margin: 4rem 0;
-}
-
-.intro-greeting {
-  font-size: 3.8rem;
-  font-weight: 900;
-  color: #e67e22;
-  margin-bottom: 2rem;
-  text-shadow: 0 3px 10px rgba(255,255,255,0.6);
-  line-height: 1.1;
-  background: linear-gradient(45deg, #e67e22, #f39c12);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.mission-statement {
-  font-size: 2.6rem;
-  color: #2c3e50;
-  font-weight: 700;
-  line-height: 1.4;
-  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.2);
-  padding: 2rem;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.3);
-}
-
-.special-word {
-  color: #e74c3c;
-  font-weight: 900;
-  font-size: 1.15em;
-  text-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.main-promise {
-  margin: 4rem 0;
-}
-
-.promise-text {
-  font-size: 2.4rem;
-  color: #34495e;
-  font-weight: 700;
-  line-height: 1.5;
-  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
-  max-width: 750px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.25);
-  padding: 2.5rem;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.4);
-}
-
-.compelling-question {
-  margin: 4rem 0;
-  padding: 3rem;
-  background: rgba(255,255,255,0.3);
-  border-radius: 25px;
-  backdrop-filter: blur(15px);
-  border: 3px solid rgba(255,255,255,0.5);
-}
-
-.question-text {
-  font-size: 2.8rem;
-  color: #8e44ad;
-  font-weight: 800;
-  line-height: 1.3;
-  text-shadow: 0 3px 10px rgba(255,255,255,0.8);
-  margin: 0;
-}
-
-.simple-benefits {
-  margin: 4rem 0;
-}
-
-.benefit-line {
-  font-size: 2.2rem;
-  color: #27ae60;
-  font-weight: 800;
-  text-shadow: 0 2px 8px rgba(255,255,255,0.8);
-  line-height: 1.4;
-  background: rgba(255,255,255,0.2);
-  padding: 1.5rem;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.3);
-}
-
-.action-area {
-  margin-top: 5rem;
-}
-
-.main-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-  color: white;
-  font-size: 2rem;
-  font-weight: 900;
-  padding: 2rem 4rem;
-  border-radius: 60px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
-  transition: all 0.3s ease;
-  border: 3px solid rgba(255,255,255,0.2);
-}
-
-.main-cta:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 20px 50px rgba(231, 76, 60, 0.7);
-  border-color: rgba(255,255,255,0.4);
-}
-
-.cta-icon {
-  font-size: 2.5rem;
-  animation: bounce-icon 2s infinite ease-in-out;
-}
-
-@keyframes bounce-icon {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(10deg); }
-}
-
-.cta-text {
-  font-family: 'Rubik', sans-serif;
-}
-
-/* רספונסיבי */
-@media (max-width: 768px) {
-  .hero {
-    padding: 3rem 1rem;
+  .hero-classic-purple {
+    background: linear-gradient(160deg, #f7f2fa 0%, #e3d6f3 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+    direction: rtl;
+    color: #3c2a4d;
+    font-family: "Alef", sans-serif;
   }
 
-  .main-title {
-    font-size: 3rem;
-    line-height: 1.2;
+  .hero-content-classic-purple {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInSlideUp 1.2s ease-out forwards;
+  }
+
+  @keyframes fadeInSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .main-title-classic-purple {
+    font-family: "Assistant", sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #5e3c82;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .heart-icon-classic {
+    color: #b95fc9;
+    font-size: 1em;
+    vertical-align: middle;
+  }
+
+  .intro-greeting-classic-purple {
+    font-family: "Assistant", sans-serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #9b6cc3;
     margin-bottom: 2rem;
   }
 
-  .intro-greeting {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .mission-statement {
-    font-size: 1.8rem;
-    padding: 1.5rem;
-  }
-
-  .promise-text {
-    font-size: 1.6rem;
-    padding: 2rem;
-  }
-
-  .question-text {
-    font-size: 2rem;
-  }
-
-  .compelling-question {
-    padding: 2rem;
-  }
-
-  .benefit-line {
-    font-size: 1.6rem;
-    padding: 1.2rem;
-  }
-
-  .main-cta {
-    font-size: 1.5rem;
-    padding: 1.5rem 3rem;
-    letter-spacing: 1px;
-  }
-
-  .cta-icon {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 2.5rem;
-  }
-
-  .intro-greeting {
+  .mission-statement-classic-purple {
     font-size: 2.2rem;
+    color: #4d3a61;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto;
   }
 
-  .mission-statement {
-    font-size: 1.5rem;
-    padding: 1.2rem;
+  .special-word-classic-purple {
+    color: #b95fc9;
+    font-weight: 700;
+    font-size: 1.1em;
   }
 
-  .promise-text {
-    font-size: 1.3rem;
-    padding: 1.5rem;
+  .main-promise-classic-purple,
+  .compelling-question-classic-purple,
+  .simple-benefits-classic-purple {
+    margin: 4rem 0;
   }
 
-  .question-text {
-    font-size: 1.6rem;
+  .promise-text-classic-purple {
+    font-size: 2rem;
+    color: #4d3a61;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto;
   }
 
-  .benefit-line {
-    font-size: 1.3rem;
-    padding: 1rem;
+  .question-text-classic-purple {
+    font-family: "Assistant", sans-serif;
+    font-size: 3rem;
+    color: #7a51a0;
+    font-weight: 600;
+    line-height: 1.4;
   }
 
-  .main-cta {
-    font-size: 1.3rem;
-    padding: 1.3rem 2.5rem;
+  .benefit-line-classic-purple {
+    font-size: 2rem;
+    color: #775d92;
+    font-weight: 500;
   }
-}
+
+  .action-area-classic-purple {
+    margin-top: 5rem;
+  }
+
+  .main-cta-classic-purple {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #a050c4, #843fa6);
+    color: white;
+    font-size: 2.1rem;
+    font-weight: 600;
+    padding: 1.8rem 4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(160, 80, 196, 0.3);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    position: relative;
+    z-index: 1;
+    font-family: "Assistant", sans-serif;
+  }
+
+  .main-cta-classic-purple::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease-out;
+    z-index: -1;
+  }
+
+  .main-cta-classic-purple:hover::before {
+    left: 0;
+  }
+
+  .main-cta-classic-purple:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(160, 80, 196, 0.45);
+  }
+
+  .cta-icon-classic-purple {
+    font-size: 2.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  .main-cta-classic-purple:hover .cta-icon-classic-purple {
+    transform: rotate(6deg);
+  }
+
+  @media (max-width: 768px) {
+    .main-title-classic-purple {
+      font-size: 4rem;
+    }
+
+    .intro-greeting-classic-purple {
+      font-size: 2.8rem;
+    }
+
+    .mission-statement-classic-purple,
+    .promise-text-classic-purple {
+      font-size: 1.9rem;
+    }
+
+    .question-text-classic-purple {
+      font-size: 2.5rem;
+    }
+
+    .benefit-line-classic-purple {
+      font-size: 1.8rem;
+    }
+
+    .main-cta-classic-purple {
+      font-size: 1.8rem;
+      padding: 1.5rem 3.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-title-classic-purple {
+      font-size: 3.2rem;
+    }
+
+    .intro-greeting-classic-purple {
+      font-size: 2.4rem;
+    }
+
+    .mission-statement-classic-purple,
+    .promise-text-classic-purple {
+      font-size: 1.6rem;
+    }
+
+    .question-text-classic-purple {
+      font-size: 2rem;
+    }
+
+    .benefit-line-classic-purple {
+      font-size: 1.6rem;
+    }
+
+    .main-cta-classic-purple {
+      font-size: 1.6rem;
+      padding: 1.3rem 2.8rem;
+    }
+  }
 </style>
+
 
   <!-- Bridge Section -->
   <section class="bridge-section">
