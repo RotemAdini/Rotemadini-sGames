@@ -164,6 +164,7 @@ canvas#stars {
 .cta-button {
   font-size: 1.1rem;
   animation: pulse 2s infinite ease-in-out;
+    margin-bottom: 0.5rem;
 }
 
 .purchase-button {
@@ -209,7 +210,7 @@ canvas#stars {
 }
 
 .section-subtitle {
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 /* Feature Grid */
@@ -317,7 +318,7 @@ canvas#stars {
 
 #purchase p {
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 #purchase form {
