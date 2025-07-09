@@ -500,4 +500,19 @@ details[open] .faq-question .arrow {
   .forest-page .hero-section + section {
     margin-top: -0.5rem;
   }
+  /* אפס רווחים לא נחוצים במובייל */
+@media (max-width: 600px) {
+  .forest-page .hero-section {
+    padding-bottom: 1rem !important;
+  }
+
+  .forest-page .hero-section .cta-button {
+    margin-bottom: 0 !important;
+  }
+
+  .forest-page .hero-section + section {
+    margin-top: -5rem !important;
+  }
+}
+
 }
