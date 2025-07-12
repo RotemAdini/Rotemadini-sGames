@@ -52,6 +52,151 @@
   font-size: 2.2em;
   margin-top: 0;
   font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.race-page .hero-tagline {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin: 20px auto 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.race-page .hero-description {
+  font-size: 1.15em;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.race-page .hero-description strong {
+  color: var(--race-accent);
+  font-weight: 700;
+}
+
+.trophy-icon {
+  color: var(--race-accent);
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+/* Buttons */
+.race-page .btn-primary {
+  background: linear-gradient(45deg, var(--race-primary), var(--race-secondary));
+  color: white;
+  padding: 18px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+
+.race-page .btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.race-page .cta-accent {
+  background: var(--race-accent);
+  color: var(--race-primary);
+}
+
+/* Sections */
+.race-page section {
+  background: white;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.race-page h2 {
+  font-family: 'Secular One', sans-serif;
+  font-size: 2.3em;
+  color: var(--race-primary);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.race-page h2:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--race-secondary);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Problem Points */
+.race-page .problem-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.race-page .problem-points li {
+  font-size: 1.15em;
+  margin-bottom: 15px;
+  padding: 12px 20px 12px 10px;
+  background-color: #fff0f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+}
+
+.race-page .problem-points li i {
+  color: var(--race-secondary);
+  font-size: 1.8em;
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+.race-page .break-routine-text {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 40px;
+  color: var(--race-secondary);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Challenge Grid */
+.race-page .challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.race-page .challenge-card {
+  background-color: #fff;
+  border: 2px solid var(--race-primary);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -80,16 +225,6 @@
   font-weight: 600;
   color: var(--race-primary);
   margin-top: 20px;
-}
-
-.race-page .challenge-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 עמודות קבועות */
-  grid-template-rows: 1fr 1fr;    /* 2 שורות קבועות */
-  gap: 20px;
-  margin-bottom: 30px;
-  max-width: 600px;               /* הוסף רוחב מקסימלי */
-  margin: 0 auto 30px auto;       /* מרכז את הגריד */
 }
 
 .race-page .feature-card {
@@ -450,8 +585,12 @@
   margin-top: 3rem;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
+  .race-page .hero-section {
+    padding: 60px 20px 40px;
+  }
+  
   .race-page .hero-title {
     font-size: 3em;
   }
@@ -539,146 +678,4 @@
   .race-page .security-info {
     font-size: 0.85em;
   }
-}: 500;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
-.trophy-icon {
-  color: var(--race-accent);
-  margin-right: 8px;
-  font-size: 1.1em;
-}
-
-.race-page .hero-tagline {
-  font-size: 1.4em;
-  font-weight: 500;
-  margin: 20px auto 30px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 10px 20px;
-  border-radius: 8px;
-  display: inline-block;
-  max-width: 80%;
-}
-
-.race-page .hero-description {
-  font-size: 1.15em;
-  line-height: 1.8;
-  margin-bottom: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.race-page .hero-description strong {
-  color: var(--race-accent);
-  font-weight: 700;
-}
-
-/* Buttons */
-.race-page .btn-primary {
-  background: linear-gradient(45deg, var(--race-primary), var(--race-secondary));
-  color: white;
-  padding: 18px 35px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1.3em;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  display: inline-block;
-}
-
-.race-page .btn-primary:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.race-page .cta-accent {
-  background: var(--race-accent);
-  color: var(--race-primary);
-}
-
-/* Sections */
-.race-page section {
-  background: white;
-  margin: 2rem auto;
-  max-width: 900px;
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-  position: relative;
-}
-
-.race-page h2 {
-  font-family: 'Secular One', sans-serif;
-  font-size: 2.3em;
-  color: var(--race-primary);
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.race-page h2:after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background-color: var(--race-secondary);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Problem Points */
-.race-page .problem-points {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 650px;
-}
-
-.race-page .problem-points li {
-  font-size: 1.15em;
-  margin-bottom: 15px;
-  padding: 12px 20px 12px 10px;
-  background-color: #fff0f5;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  display: flex;
-  align-items: center;
-}
-
-.race-page .problem-points li i {
-  color: var(--race-secondary);
-  font-size: 1.8em;
-  margin-left: 15px;
-  flex-shrink: 0;
-}
-
-.race-page .break-routine-text {
-  font-size: 1.5em;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 40px;
-  color: var(--race-secondary);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-/* Challenge Grid */
-.race-page .challenge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.race-page .challenge-card {
-  background-color: #fff;
-  border: 2px solid var(--race-primary);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  font-size: 1.1em;
-  font-weight
