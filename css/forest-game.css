@@ -108,6 +108,19 @@ canvas#stars {
 
 /* Hero Section */
 .forest-page .hero-section {
+  padding: 20px 2rem 80px 2rem !important;
+  min-height: auto !important;
+  display: flex;
+  align-items: flex-start !important;
+  justify-content: center;
+  text-align: center;
+}
+
+.forest-page .hero-section div {
+  width: 100%;
+  margin-top: 20px;
+}
+.forest-page .hero-section {
   min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
@@ -500,19 +513,4 @@ details[open] .faq-question .arrow {
   .forest-page .hero-section + section {
     margin-top: -0.5rem;
   }
-  /* אפס רווחים לא נחוצים במובייל */
-@media (max-width: 600px) {
-  .forest-page .hero-section {
-    padding-bottom: 1rem !important;
-  }
-
-  .forest-page .hero-section .cta-button {
-    margin-bottom: 0 !important;
-  }
-
-  .forest-page .hero-section + section {
-    margin-top: -5rem !important;
-  }
-}
-
 }
